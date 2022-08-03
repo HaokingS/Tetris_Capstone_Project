@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-import lorem
 
 # import data
 pendidikan = pd.read_csv('cleaned_pendidikan.csv', index_col = 0)
