@@ -12,26 +12,42 @@ prakerja = pd.read_csv('cleaned_prakerja.csv', index_col =0)
 # page config
 # st.set_page_config(layout='wide')
 
-# sidebar
+# sidebar populasi
 st.sidebar.header('Populasi Penduduk Indonesia')
 col1,col2 = st.sidebar.columns(2)
 with col1:
-    tahun_awal = int(st.number_input('Masukkan Tahun Awal', min_value = 1800, max_value= 2099, value = 1800) - 1800)
+    tahun_awal = st.number_input(
+            'Masukkan Tahun Awal', 
+            min_value = 1800, 
+            max_value= 2099, 
+            value = 1800
+            ) 
+    tahun_awal = int(tahun_awal - 1800)
 with col2:
-    tahun_akhir = int(st.number_input('Masukkan Tahun Akhir', min_value = 1801, max_value= 2100, value = 2000) - 1800)
+    tahun_akhir = st.number_input(
+        'Masukkan Tahun Akhir',
+        min_value = 1801,
+        max_value= 2100,
+        value = 2000
+        )
+    tahun_akhir = int(tahun_akhir - 1800)
+
+# sidebar distribusi
 st.sidebar.header('Distribusi Pengangguran')
 slider = st.sidebar.slider('Pilih Tahun', min_value = 2014, max_value = 2022, value = 2014)
 
-# center title 
+# judul 
 st.markdown('''<h1 style='text-align: center; color: black;'>
 Pengaruh Program Kartu Prakerja Terhadap Angka Pengangguran di Indonesia
 </h1>''', unsafe_allow_html=True)
 
+# penulis
 st.markdown('''<h3 style='text-align: center; color: black;'>
 \n Dipublikasi pada 4 Agustus 2022 
 \n By : Haoking Suryanatmaja
 </h3>''', unsafe_allow_html=True)
 
+# pendahuluan 1
 st.markdown('''<div style="text-align: justify;">
 Saat ini, pekerjaan merupakan hal yang langka karena persaingan yang ketat. Selain itu, populasi penduduk yang terus meningkat yang 
 tidak diimbangi dengan pertumbuhan lapangan pekerjaan menyebabkan sekelompok masyarakat tidak memiliki pekerjaan atau disebut 
@@ -43,6 +59,7 @@ st.write('')
 # thumbnail
 st.image('prakerja.png', caption = 'Ilustrasi Kartu Prakerja')
 
+# pendahuluan 2 
 st.markdown('''<div style="text-align: justify;">
 Salah satu tindakan yang dilakukan oleh pemerintah adalah program kartu prakerja. Dengan program ini, masyarakat diharapkan dapat
 meningkatkan wawasan dan pengetahuan serta mendapatkan keahlian sebagai tenaga kerja yang terampil agar dapat bersaing ataupun 
@@ -50,7 +67,7 @@ berwirausaha dan membuka lapangan pekerjaan.
 </div>''', unsafe_allow_html=True)
 st.markdown('')
 
-# populasi indonesia
+# populasi indonesia 1
 st.header('Populasi Penduduk Indonesia')
 st.markdown('''<div style="text-align: justify;">
 Berdasarkan data populasi yang diperoleh dari gapminder.org sejak tahun 1800, peningkatan penduduk Indonesia cukup signifikan.
@@ -59,15 +76,21 @@ Indonesia diprediksi akan mencapai puncak yaitu sekitar 330 juta jiwa.
 </div>''', unsafe_allow_html=True)
 st.markdown('')
 
+# grafik populasi tahun 1800-2100
 fig = plt.figure(figsize=(10, 6))
 plt.title("Populasi Penduduk Indonesia Tahun 1800-2100", y=1.02, fontsize=18)
-plt.xlabel('Tahun')
-plt.ylabel('Jumlah Penduduk')
-sns.lineplot(x="tahun", y = 'jumlah', data = populasi.iloc[tahun_awal:tahun_akhir,:])
+plt.xlabel('Tahun',fontweight='bold')
+plt.ylabel('Jumlah Penduduk', fontweight='bold')
+sns.lineplot(
+    x="tahun",
+    y = 'jumlah',
+    data = populasi.iloc[tahun_awal:tahun_akhir,:]
+    )
 plt.ticklabel_format(style='plain', axis='y')
 st.pyplot(fig)
 st.caption('Sumber: gapminder.org')
 
+# populasi indonesia 2
 st.markdown('''<div style="text-align: justify;">
 Hal ini tentu saja cukup mengkhawatirkan jika tidak ada perubahan yang terjadi terutama dari segi pekerjaan. Jumlah masyarakat
 yang terus bertambah ini perlu diimbangi dengan kualitas diri dari masing-masing individu agar dapat bersaing dan berkreatifitas 
@@ -75,6 +98,7 @@ dalam berwirausaha.
 </div>''', unsafe_allow_html=True)
 st.markdown('')
 
+# distribusi 1
 st.header('Distribusi Pengangguran Berdasarkan Kategori')
 st.markdown('''<div style="text-align: justify;">
 Berdasarkan data yang diperoleh dari Badan Pusat Statistik, pengangguran dapat dilihat dari dua kategori yaitu usia dan pendidikan
@@ -82,35 +106,37 @@ terakhir yang ditempuh hingga tamat.
 </div>''', unsafe_allow_html=True)
 st.markdown('')
 
-# pengangguran vs usia
+# distribusi usia
 st.subheader('Usia')
 st.markdown('''<div style="text-align: justify;">
 Usia yang dikategorikan mulai dari umur 15 tahun hingga 60 tahun dengan interval sebesar 4 tahun.
 </div>''', unsafe_allow_html=True)
 st.markdown('')
 
+# grafik distribusi usia tahun 2014-2022
 fig = plt.figure(figsize=(10, 5))
+plt.title("Distribusi Pengangguran Berdasarkan Usia", y=1.02, fontsize=18)
+plt.xlabel('Jumlah Pengangguran', fontweight='bold')
+plt.ylabel('Usia', fontweight='bold')
 sns.barplot(
     x = 'jumlah_pengangguran',
     y = 'kelompok_usia', 
     data = usia[usia['tahun'] == slider]
 )
-plt.title("Distribusi Pengangguran Berdasarkan Usia", y=1.02, fontsize=18)
-plt.xlabel('Jumlah Pengangguran', fontweight='bold')
-plt.ylabel('Usia')
 plt.ticklabel_format(style='plain', axis='x')
 st.pyplot(fig)
 st.caption('Sumber: Badan Pusat Statistik')
 
+# distribusi usia 2
 st.markdown('''<div style="text-align: justify;">
-Sejak tahun 2014 hingga 2022 kategori usia yang mendominasi menjadi pengangguran adalah pada rentang 20-24 tahun. Pada tahun 2014
-hingga 2018 rentang 15-19 tahun menempati posisi kedua dan rentang 25-29 tahun pada posisi ketiga. Namun, sejak tahun 2018 rentang
-25-29 tahun mendominasi posisi kedua. Tenaga kerja yang pada awalnya pada usia muda berpindah ke rentang usia yang lebih tua. Hal ini
-menunjukkan tidak ada perubahan signifikan yang terjadi terhadap pengangguran.
+Sejak tahun 2014 hingga 2022 kategori usia yang mendominasi menjadi pengangguran adalah pada rentang usia 20-24 tahun. Pada tahun 2014
+hingga 2018 rentang usia 15-19 tahun menempati posisi kedua dan rentang 25-29 tahun pada posisi ketiga. Namun, sejak tahun 2018 
+rentang usia 25-29 tahun mendominasi posisi kedua. Tenaga kerja yang pada awalnya pada usia muda berpindah ke rentang usia yang lebih 
+tua. Hal ini menunjukkan tidak ada perubahan signifikan yang terjadi terhadap pengangguran.
 </div>''', unsafe_allow_html=True)
 st.markdown('')
 
-# pengangguran vs pendidikan
+# disribusi pendidikan 1
 st.subheader('Pendidikan')
 st.markdown('''<div style="text-align: justify;">
 Jumlah pengangguran juga dapat dilihat dari kategori pendidikan yaitu kategori belum bersekolah, lulusan SD, SMP, SMU/SMK, akademi, 
@@ -118,26 +144,28 @@ maupun universitas.
 </div>''', unsafe_allow_html=True)
 st.markdown('')
 
+# grafik distribusi pendidikan tahun 2014-2022
 fig = plt.figure(figsize=(10, 5))
+plt.title("Distribusi Pengangguran Berdasarkan Pendidikan Terakhir", y=1.02, fontsize=18)
+plt.xlabel('Jumlah Pengangguran', fontweight='bold')
+plt.ylabel('Pendidikan', fontweight='bold')
 sns.barplot(
     x = 'jumlah_pengangguran',
     y = 'kelompok_pendidikan', 
     data = pendidikan[pendidikan['tahun'] == slider]
 )
-plt.title("Distribusi Pengangguran Berdasarkan Pendidikan Terakhir", y=1.02, fontsize=18)
-plt.xlabel('Jumlah Pengangguran')
-plt.ylabel('Pendidikan')
 plt.ticklabel_format(style='plain', axis='x')
 st.pyplot(fig)
 st.caption('Sumber: Badan Pusat Statistik')
 
+# distribusi pendidikan 2 
 st.markdown('''<div style="text-align: justify;">
 Sejak tahun 2014-2022, kategori pendidikan tertinggi SMU merupakan kategori yang memiliki jumlah pengangguran paling banyak. Selain itu,
 pengangguran juga didominasi dari kategori SD, SLTP, dan SMK. 
 </div>''', unsafe_allow_html=True)
 st.markdown('')
 
-# prakerja
+# prakerja 1
 st.header('Prakerja')
 st.markdown('''<div style="text-align: justify;">
 Jumlah pengangguran meningkat drastis pada tahun 2020-2021, hal ini dikarenakan dampak dari pandemi COVID-19 yang menyebabkan
@@ -145,12 +173,13 @@ berbagai sektor lumpuh yang akhirnya berdampak kepada tenaga kerja. Memasuki tah
 </div>''', unsafe_allow_html=True)
 st.markdown('')
 
+# grafik jumlah pengangguran dan penerima kartu prakerja
 col1,col2 = st.columns(2)
 with col1:
     fig = plt.figure(figsize=(10, 5))
     plt.title("Jumlah Pengangguran Tahun 2014-2022", y=1.02, fontsize=18)
-    plt.xlabel('Tahun')
-    plt.ylabel('Jumlah Pengangguran')
+    plt.xlabel('Tahun', fontweight='bold')
+    plt.ylabel('Jumlah Pengangguran', fontweight='bold')
     sns.lineplot(x="tahun", y = 'jumlah_pengangguran', data = usia.groupby('tahun').sum())
     plt.ticklabel_format(style='plain', axis='y')
     st.pyplot(fig)
@@ -158,20 +187,22 @@ with col1:
 with col2:
     fig = plt.figure(figsize=(10, 5))
     plt.title("Penerima Kartu Prakerja", y=1.02, fontsize=18)
-    plt.xlabel('gelombang')
-    plt.ylabel('Penerima')
+    plt.xlabel('Gelombang', fontweight='bold')
+    plt.ylabel('Penerima', fontweight='bold')
     sns.lineplot(x="gelombang", y = 'penerima', data = prakerja)
     plt.ticklabel_format(style='plain', axis='y')
     st.pyplot(fig)
     st.caption('Sumber: prakerja.go.id')
 
+# prakerja 2
 st.markdown('''<div style="text-align: justify;">
 Sejak bulan April tahun 2020, pemerintah sudah melaksanakan program kartu prakerja secara digital, mulai dari pendaftaran,
 pelatihan, hingga insentif yang dapat digunakan sebagai modal usaha juga diberikan secara digital. Kartu Prakerja terbukti memberikan 
-manfaat yang sangat positif, dibuktikan dengan hasil survei oleh prakerja.go.id.
+manfaat yang sangat positif berdasarkan data yang diperoleh dari hasil prakerja.go.id.
 </div>''', unsafe_allow_html=True)
 st.markdown('')
 
+# prakerja 3
 st.markdown('''<div style="text-align: justify;">
 Dari 11 juta penerima manfaat program Kartu Prakerja,
 diperoleh data survei dibawah ini. Sebanyak 90% belum pernah mengikuti pelatihan apapun sebelum mendapatkan kartu prakerja. 
@@ -180,6 +211,17 @@ telah mendapatkan bekal pengetahuan dari mengikuti pelatihan. 34,6% yang semula 
 dengan menyertakan sertifikat pelatihan. Namun masih ada 39,85% yang masih belum mendapatkan pekerjaan.
 </div>''', unsafe_allow_html=True)
 
+# pie chart
+# colors = sns.color_palette('pastel')[0:5]
+# plt.pie(
+#     data = [25.6, 34.6, 39.8],
+#     labels = ['Wirausaha', 'Bekerja', 'Belum Bekerja'],
+#     colors = colors, 
+#     autopct='%.0f%%')
+# plt.axis('equal')
+# plt.show()
+
+# insight 
 st.header('Insight')
 st.markdown('''
 - Populasi penduduk akan terus bertambah sehingga perlu dilakukan peningkatan kualitas dari masyarakat agar dapat bersaing dengan  tenaga kerja luar ataupun memulai wirausaha sehingga dapat membuka lapangan pekerjaan
