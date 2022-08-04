@@ -72,6 +72,7 @@ Hal ini tentu saja cukup mengkhawatirkan jika tidak ada perubahan yang terjadi t
 yang terus bertambah ini perlu diimbangi dengan kualitas diri dari masing-masing individu agar dapat bersaing dan berkreatifitas 
 dalam berwirausaha.
 </div>''', unsafe_allow_html=True)
+st.caption('Sumber: gapminder.org')
 st.markdown('')
 
 st.header('Distribusi Pengangguran Berdasarkan Kategori')
@@ -99,6 +100,7 @@ plt.xlabel('Jumlah Pengangguran')
 plt.ylabel('Usia')
 plt.ticklabel_format(style='plain', axis='x')
 st.pyplot(fig)
+st.caption('Sumber: bps.go.id')
 
 st.markdown('''<div style="text-align: justify;">
 Sejak tahun 2014 hingga 2022 kategori usia yang mendominasi menjadi pengangguran adalah pada rentang 20-24 tahun. Pada tahun 2014
@@ -127,6 +129,7 @@ plt.xlabel('Jumlah Pengangguran')
 plt.ylabel('Pendidikan')
 plt.ticklabel_format(style='plain', axis='x')
 st.pyplot(fig)
+st.caption('Sumber: bps.go.id')
 
 st.markdown('''<div style="text-align: justify;">
 Sejak tahun 2014-2022, kategori pendidikan tertinggi SMU merupakan kategori yang memiliki jumlah pengangguran paling banyak. Selain itu,
@@ -151,6 +154,7 @@ with col1:
     sns.lineplot(x="tahun", y = 'jumlah_pengangguran', data = usia.groupby('tahun').sum())
     plt.ticklabel_format(style='plain', axis='y')
     st.pyplot(fig)
+    st.caption('Sumber: bps.go.id')
 with col2:
     fig = plt.figure(figsize=(10, 5))
     plt.title("Penerima Kartu Prakerja", y=1.02, fontsize=18)
@@ -159,6 +163,7 @@ with col2:
     sns.lineplot(x="gelombang", y = 'penerima', data = prakerja)
     plt.ticklabel_format(style='plain', axis='y')
     st.pyplot(fig)
+    st.caption('Sumber: prakerja.go.id')
 
 st.markdown('''<div style="text-align: justify;">
 Sejak bulan April tahun 2020, pemerintah sudah melaksanakan program kartu prakerja secara digital, mulai dari pendaftaran,
@@ -181,5 +186,3 @@ st.markdown('''
 - Kategori pengangguran yang dominan masih dalam usia produktif dan memiliki dasar pengetahuan sehingga bisa dilakukan pelatihan  untuk meningkatkan wawasan dan daya saing
 - Program kartu prakerja merupakan salah satu tindakan yang tepat dilakukan pemerintah dalam menangani pengangguran dengan menyediakan  fasilitas bagi tenaga kerja, namun belum dapat menurunkan angka pengangguran secara signifikan
 ''', unsafe_allow_html=True)
-
-st.caption('Sumber data: gapminder.org, bps.go.id, kompas.com, prakerja.go.id')
