@@ -53,7 +53,7 @@ st.markdown('')
 # populasi indonesia
 st.header('Populasi Penduduk Indonesia')
 st.markdown('''<div style="text-align: justify;">
-Berdasarkan data populasi yang diperoleh dari gapminder.org sejak tahun 2018, peningkatan penduduk Indonesia cukup signifikan.
+Berdasarkan data populasi yang diperoleh dari gapminder.org sejak tahun 1800, peningkatan penduduk Indonesia cukup signifikan.
 Pada tahun 2020, penduduk Indonesia mencapai sekitar 274 jiwa dan jumlah ini akan terus bertambah. Pada tahun 2060-2070 populasi
 Indonesia diprediksi akan mencapai puncak yaitu sekitar 330 juta jiwa.
 </div>''', unsafe_allow_html=True)
