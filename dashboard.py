@@ -96,7 +96,7 @@ sns.barplot(
     data = usia[usia['tahun'] == slider]
 )
 plt.title("Distribusi Pengangguran Berdasarkan Usia", y=1.02, fontsize=18)
-plt.xlabel('Jumlah Pengangguran')
+plt.xlabel('Jumlah Pengangguran', fontweight='bold')
 plt.ylabel('Usia')
 plt.ticklabel_format(style='plain', axis='x')
 st.pyplot(fig)
