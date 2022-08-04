@@ -100,7 +100,7 @@ plt.xlabel('Jumlah Pengangguran')
 plt.ylabel('Usia')
 plt.ticklabel_format(style='plain', axis='x')
 st.pyplot(fig)
-st.caption('Sumber: bps.go.id')
+st.caption('Sumber: Badan Pusat Statistik')
 
 st.markdown('''<div style="text-align: justify;">
 Sejak tahun 2014 hingga 2022 kategori usia yang mendominasi menjadi pengangguran adalah pada rentang 20-24 tahun. Pada tahun 2014
@@ -129,7 +129,7 @@ plt.xlabel('Jumlah Pengangguran')
 plt.ylabel('Pendidikan')
 plt.ticklabel_format(style='plain', axis='x')
 st.pyplot(fig)
-st.caption('Sumber: bps.go.id')
+st.caption('Sumber: Badan Pusat Statistik')
 
 st.markdown('''<div style="text-align: justify;">
 Sejak tahun 2014-2022, kategori pendidikan tertinggi SMU merupakan kategori yang memiliki jumlah pengangguran paling banyak. Selain itu,
@@ -154,7 +154,7 @@ with col1:
     sns.lineplot(x="tahun", y = 'jumlah_pengangguran', data = usia.groupby('tahun').sum())
     plt.ticklabel_format(style='plain', axis='y')
     st.pyplot(fig)
-    st.caption('Sumber: bps.go.id')
+    st.caption('Sumber: Badan Pusat Statistik')
 with col2:
     fig = plt.figure(figsize=(10, 5))
     plt.title("Penerima Kartu Prakerja", y=1.02, fontsize=18)
