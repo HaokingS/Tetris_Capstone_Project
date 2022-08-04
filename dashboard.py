@@ -66,13 +66,13 @@ plt.ylabel('Jumlah Penduduk')
 sns.lineplot(x="tahun", y = 'jumlah', data = populasi.iloc[tahun_awal:tahun_akhir,:])
 plt.ticklabel_format(style='plain', axis='y')
 st.pyplot(fig)
+st.caption('Sumber: gapminder.org')
 
 st.markdown('''<div style="text-align: justify;">
 Hal ini tentu saja cukup mengkhawatirkan jika tidak ada perubahan yang terjadi terutama dari segi pekerjaan. Jumlah masyarakat
 yang terus bertambah ini perlu diimbangi dengan kualitas diri dari masing-masing individu agar dapat bersaing dan berkreatifitas 
 dalam berwirausaha.
 </div>''', unsafe_allow_html=True)
-st.caption('Sumber: gapminder.org')
 st.markdown('')
 
 st.header('Distribusi Pengangguran Berdasarkan Kategori')
