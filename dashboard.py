@@ -220,12 +220,12 @@ Menggunakan insentif Kartu Prakerja untuk modal usaha sebesar 42,4%.
 # pie chart
 labels = ['Wirausaha', 'Bekerja', 'Belum Bekerja']
 sizes = [25.6, 34.6, 39.8]
-explode = (0, 0, 0.1)  # only "explode" the 2nd slice (i.e. 'Hogs')
+explode = (0, 0, 0.1) 
 
 fig1, ax1 = plt.subplots(figsize=(5,2))
 ax1.pie(sizes, explode=explode, labels=labels, radius=1, autopct='%1.1f%%',
         shadow=False, startangle=90)
-ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+ax1.axis('equal')
 st.pyplot(fig1)
 
 # Prakerja 4
