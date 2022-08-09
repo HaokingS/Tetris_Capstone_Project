@@ -238,8 +238,8 @@ pekerjaan dengan menyertakan sertifikat pelatihan. Namun, <b>masih ada 39,85%</b
 # insight 
 st.header('Insight')
 st.markdown('''
-- Populasi penduduk akan terus bertambah sehingga perlu dilakukan peningkatan kualitas dari masyarakat agar dapat bersaing 
-dengan  tenaga kerja luar ataupun memulai wirausaha sehingga dapat membuka lapangan pekerjaan
-- Kategori pengangguran yang dominan masih dalam usia produktif dan memiliki dasar pengetahuan sehingga bisa dilakukan pelatihan  untuk meningkatkan wawasan dan daya saing
-- Program kartu prakerja merupakan salah satu tindakan yang tepat dilakukan pemerintah dalam menangani pengangguran dengan menyediakan  fasilitas bagi tenaga kerja, namun belum dapat menurunkan angka pengangguran secara signifikan
+- Populasi penduduk akan terus bertambah sehingga perlu dilakukan peningkatan kualitas dari masyarakat agar dapat bersaing dengan tenaga kerja luar ataupun memulai wirausaha sehingga dapat membuka lapangan pekerjaan
+- Kategori pengangguran yang dominan masih dalam usia muda dan memiliki dasar pengetahuan dan potensi sehingga program ini tepat karena dapat meningkatkan wawasan dan daya saing dari tenaga kerja
+- Hal ini merupakan salah satu tindakan yang tepat dilakukan pemerintah dalam menangani pengangguran dengan menyediakan fasilitas bagi tenaga kerja
+- Prakerja belum dapat menurunkan angka pengangguran secara signifikan, hal ini dapat ditingkatkan dengan memperbesar kuota penerima kartu prakerja
 ''', unsafe_allow_html=True)
