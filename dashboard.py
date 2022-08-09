@@ -115,24 +115,25 @@ st.markdown('')
 
 # grafik distribusi usia tahun 2014-2022
 fig = plt.figure(figsize=(10, 5))
-plt.title("Distribusi Pengangguran Berdasarkan Usia", y=1.02, fontsize=18)
-plt.xlabel('Jumlah Pengangguran', fontweight='bold')
-plt.ylabel('Usia', fontweight='bold')
 sns.barplot(
     x = 'jumlah_pengangguran',
     y = 'kelompok_usia', 
     data = usia[usia['tahun'] == slider]
 )
 plt.ticklabel_format(style='plain', axis='x')
+plt.title("Distribusi Pengangguran Berdasarkan Usia", y=1.02, fontsize=18)
+plt.xlabel('Jumlah Pengangguran', fontweight='bold')
+plt.ylabel('Usia', fontweight='bold')
 st.pyplot(fig)
 st.caption('Sumber: Badan Pusat Statistik')
 
 # distribusi usia 2
 st.markdown('''<div style="text-align: justify;">
-Sejak tahun 2014 hingga 2022 kategori usia yang mendominasi menjadi pengangguran adalah pada rentang usia 20-24 tahun. Pada tahun 2014
-hingga 2018 rentang usia 15-19 tahun menempati posisi kedua dan rentang 25-29 tahun pada posisi ketiga. Namun, sejak tahun 2018 
-rentang usia 25-29 tahun mendominasi posisi kedua. Tenaga kerja yang pada awalnya pada usia muda berpindah ke rentang usia yang lebih 
-tua. Hal ini menunjukkan tidak ada perubahan signifikan yang terjadi terhadap pengangguran.
+Sejak tahun 2014 hingga 2022 kategori usia yang mendominasi menjadi pengangguran adalah pada <b>rentang usia 20-24 tahun.</b> 
+Pada tahun 2014 hingga 2018 rentang usia 15-19 tahun menempati posisi kedua dan rentang 25-29 tahun pada posisi ketiga. 
+Namun, sejak tahun 2018 rentang usia 25-29 tahun mendominasi posisi kedua. Tenaga kerja yang pada awalnya pada usia muda 
+berpindah ke rentang usia yang lebih tua. Hal ini menunjukkan sejak tahun 2018 <b>tidak ada perubahan signifikan</b>     yang terjadi 
+terhadap pengangguran.
 </div>''', unsafe_allow_html=True)
 st.markdown('')
 
@@ -146,53 +147,42 @@ st.markdown('')
 
 # grafik distribusi pendidikan tahun 2014-2022
 fig = plt.figure(figsize=(10, 5))
-plt.title("Distribusi Pengangguran Berdasarkan Pendidikan Terakhir", y=1.02, fontsize=18)
-plt.xlabel('Jumlah Pengangguran', fontweight='bold')
-plt.ylabel('Pendidikan', fontweight='bold')
 sns.barplot(
     x = 'jumlah_pengangguran',
     y = 'kelompok_pendidikan', 
     data = pendidikan[pendidikan['tahun'] == slider]
 )
 plt.ticklabel_format(style='plain', axis='x')
+plt.title("Distribusi Pengangguran Berdasarkan Pendidikan Terakhir", y=1.02, fontsize=18)
+plt.xlabel('Jumlah Pengangguran', fontweight='bold')
+plt.ylabel('Pendidikan', fontweight='bold')
 st.pyplot(fig)
 st.caption('Sumber: Badan Pusat Statistik')
 
 # distribusi pendidikan 2 
 st.markdown('''<div style="text-align: justify;">
-Sejak tahun 2014-2022, kategori pendidikan tertinggi SMU merupakan kategori yang memiliki jumlah pengangguran paling banyak. Selain itu,
-pengangguran juga didominasi dari kategori SD, SLTP, dan SMK. 
+Sejak tahun 2014-2022, <b>kategori pendidikan tertinggi SMU</b> merupakan kategori yang memiliki jumlah pengangguran paling banyak.
+Selain itu, pengangguran juga didominasi dari <b>kategori SD, SLTP, dan SMK.</b>
 </div>''', unsafe_allow_html=True)
 st.markdown('')
 
 # prakerja 1
 st.header('Prakerja')
 st.markdown('''<div style="text-align: justify;">
-Jumlah pengangguran meningkat drastis pada tahun 2020-2021, hal ini dikarenakan dampak dari pandemi COVID-19 yang menyebabkan
+Jumlah pengangguran <b>meningkat drastis</b> pada tahun 2020-2021, hal ini dikarenakan dampak dari pandemi COVID-19 yang menyebabkan
 berbagai sektor lumpuh yang akhirnya berdampak kepada tenaga kerja. Memasuki tahun 2022, jumlah pengangguran sudah mulai berkurang
 </div>''', unsafe_allow_html=True)
 st.markdown('')
 
-# grafik jumlah pengangguran dan penerima kartu prakerja
-col1,col2 = st.columns(2)
-with col1:
-    fig = plt.figure(figsize=(10, 5))
-    plt.title("Jumlah Pengangguran Tahun 2014-2022", y=1.02, fontsize=18)
-    plt.xlabel('Tahun', fontweight='bold')
-    plt.ylabel('Jumlah Pengangguran', fontweight='bold')
-    sns.lineplot(x="tahun", y = 'jumlah_pengangguran', data = usia.groupby('tahun').sum())
-    plt.ticklabel_format(style='plain', axis='y')
-    st.pyplot(fig)
-    st.caption('Sumber: Badan Pusat Statistik')
-with col2:
-    fig = plt.figure(figsize=(10, 5))
-    plt.title("Penerima Kartu Prakerja", y=1.02, fontsize=18)
-    plt.xlabel('Gelombang', fontweight='bold')
-    plt.ylabel('Penerima', fontweight='bold')
-    sns.lineplot(x="gelombang", y = 'penerima', data = prakerja)
-    plt.ticklabel_format(style='plain', axis='y')
-    st.pyplot(fig)
-    st.caption('Sumber: prakerja.go.id')
+# grafik jumlah pengangguran
+fig = plt.figure(figsize=(10, 5))
+sns.lineplot(x="tahun", y = 'jumlah_pengangguran', data = usia.groupby('tahun').sum())
+plt.ticklabel_format(style='plain', axis='y')
+plt.title("Jumlah Pengangguran Tahun 2014-2022", y=1.02, fontsize=18)
+plt.xlabel('Tahun', fontweight='bold')
+plt.ylabel('Jumlah Pengangguran', fontweight='bold')
+st.pyplot(fig)
+st.caption('Sumber: Badan Pusat Statistik')
 
 # prakerja 2
 st.markdown('''<div style="text-align: justify;">
@@ -202,24 +192,44 @@ manfaat yang sangat positif berdasarkan data yang diperoleh dari hasil prakerja.
 </div>''', unsafe_allow_html=True)
 st.markdown('')
 
+# bar chart gelombang prakerja
+fig = plt.figure(figsize=(10, 5))
+sns.barplot(
+    x = 'gelombang',
+    y = 'penerima', 
+    data = prakerja
+)
+plt.ticklabel_format(style='plain', axis='y')
+plt.title("Penerima Kartu Prakerja", y=1.02, fontsize=18)
+plt.xlabel('Gelombang', fontweight='bold')
+plt.ylabel('Jumlah Penerima', fontweight='bold')
+st.pyplot(fig)
+st.caption('Sumber: prakerja.go.id')
+
 # prakerja 3
 st.markdown('''<div style="text-align: justify;">
 Dari 11 juta penerima manfaat program Kartu Prakerja,
 diperoleh data survei dibawah ini. Sebanyak 90% belum pernah mengikuti pelatihan apapun sebelum mendapatkan kartu prakerja. 
-Menggunakan insentif Kartu Prakerja untuk modal usaha sebesar 42,4%. Sebanyak 25,6% sekarang terjun jadi wirausaha, karena 
-telah mendapatkan bekal pengetahuan dari mengikuti pelatihan. 34,6% yang semula menganggur kini sudah mendapatkan pekerjaan 
-dengan menyertakan sertifikat pelatihan. Namun masih ada 39,85% yang masih belum mendapatkan pekerjaan.
+Menggunakan insentif Kartu Prakerja untuk modal usaha sebesar 42,4%.
 </div>''', unsafe_allow_html=True)
 
 # pie chart
-# colors = sns.color_palette('pastel')[0:5]
-# plt.pie(
-#     data = [25.6, 34.6, 39.8],
-#     labels = ['Wirausaha', 'Bekerja', 'Belum Bekerja'],
-#     colors = colors, 
-#     autopct='%.0f%%')
-# plt.axis('equal')
-# plt.show()
+labels = ['Wirausaha', 'Bekerja', 'Belum Bekerja']
+sizes = [25.6, 34.6, 39.8]
+explode = (0, 0, 0.1)  # only "explode" the 2nd slice (i.e. 'Hogs')
+
+fig1, ax1 = plt.subplots(figsize=(5,2))
+ax1.pie(sizes, explode=explode, labels=labels, radius=1, autopct='%1.1f%%',
+        shadow=False, startangle=90)
+ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+st.pyplot(fig1)
+
+# Prakerja 4
+st.markdown('''<div style="text-align: justify;">
+Sebanyak <b>25,6%</b> terjun menjadi wirausahawan, karena 
+telah mendapatkan bekal pengetahuan dari mengikuti pelatihan. <b>Sejumlah 34,6%</b> yang semula menganggur kini sudah mendapatkan 
+pekerjaan dengan menyertakan sertifikat pelatihan. Namun, <b>masih ada 39,85%</b> yang masih belum mendapatkan pekerjaan.
+</div>''', unsafe_allow_html=True)
 
 # insight 
 st.header('Insight')
