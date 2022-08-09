@@ -12,29 +12,9 @@ prakerja = pd.read_csv('cleaned_prakerja.csv', index_col =0)
 # page config
 # st.set_page_config(layout='wide')
 
-# sidebar populasi
-st.sidebar.header('Populasi Penduduk Indonesia')
-col1,col2 = st.sidebar.columns(2)
-with col1:
-    tahun_awal = st.number_input(
-            'Masukkan Tahun Awal', 
-            min_value = 1800, 
-            max_value= 2099, 
-            value = 1800
-            ) 
-    tahun_awal = int(tahun_awal - 1800)
-with col2:
-    tahun_akhir = st.number_input(
-        'Masukkan Tahun Akhir',
-        min_value = 1801,
-        max_value= 2100,
-        value = 2000
-        )
-    tahun_akhir = int(tahun_akhir - 1800)
-
 # sidebar distribusi
-st.sidebar.header('Distribusi Pengangguran')
-slider = st.sidebar.slider('Pilih Tahun', min_value = 2014, max_value = 2022, value = 2014)
+# st.sidebar.header('Distribusi Pengangguran')
+# slider = st.sidebar.slider('Pilih Tahun', min_value = 2014, max_value = 2022, value = 2014)
 
 # judul 
 st.markdown('''<h1 style='text-align: center; color: black;'>
@@ -77,15 +57,33 @@ Indonesia diprediksi akan mencapai puncak yaitu sekitar 330 juta jiwa.
 st.markdown('')
 
 # grafik populasi tahun 1800-2100
+col1,col2 = st.columns(2)
+with col1:
+    tahun_awal = st.number_input(
+            'Masukkan Tahun Awal', 
+            min_value = 1800, 
+            max_value= 2099, 
+            value = 1800
+            ) 
+    tahun_awal = int(tahun_awal - 1800)
+with col2:
+    tahun_akhir = st.number_input(
+        'Masukkan Tahun Akhir',
+        min_value = 1801,
+        max_value= 2100,
+        value = 2000
+        )
+    tahun_akhir = int(tahun_akhir - 1800)
+
 fig = plt.figure(figsize=(10, 6))
-plt.title("Populasi Penduduk Indonesia Tahun 1800-2100", y=1.02, fontsize=18)
-plt.xlabel('Tahun',fontweight='bold')
-plt.ylabel('Jumlah Penduduk', fontweight='bold')
 sns.lineplot(
     x="tahun",
     y = 'jumlah',
     data = populasi.iloc[tahun_awal:tahun_akhir,:]
     )
+plt.title("Populasi Penduduk Indonesia Tahun 1800-2100", y=1.02, fontsize=18)
+plt.xlabel('Tahun',fontweight='bold')
+plt.ylabel('Jumlah Penduduk', fontweight='bold')
 plt.ticklabel_format(style='plain', axis='y')
 st.pyplot(fig)
 st.caption('Sumber: gapminder.org')
@@ -114,11 +112,15 @@ Usia yang dikategorikan mulai dari umur 15 tahun hingga 60 tahun dengan interval
 st.markdown('')
 
 # grafik distribusi usia tahun 2014-2022
+slider_usia = st.selectbox(
+    'Pilih tahun untuk melihat distribusi kelompok usia pengangguran per tahun',
+    [2014,2015],
+    )
 fig = plt.figure(figsize=(10, 5))
 sns.barplot(
     x = 'jumlah_pengangguran',
     y = 'kelompok_usia', 
-    data = usia[usia['tahun'] == slider]
+    data = usia[usia['tahun'] == slider_usia]
 )
 plt.ticklabel_format(style='plain', axis='x')
 plt.title("Distribusi Pengangguran Berdasarkan Usia", y=1.02, fontsize=18)
@@ -146,11 +148,12 @@ maupun universitas.
 st.markdown('')
 
 # grafik distribusi pendidikan tahun 2014-2022
+slider_pendidikan = st.slider('Pilih Tahun', min_value = 2014, max_value = 2022, value = 2014)
 fig = plt.figure(figsize=(10, 5))
 sns.barplot(
     x = 'jumlah_pengangguran',
     y = 'kelompok_pendidikan', 
-    data = pendidikan[pendidikan['tahun'] == slider]
+    data = pendidikan[pendidikan['tahun'] == slider_pendidikan]
 )
 plt.ticklabel_format(style='plain', axis='x')
 plt.title("Distribusi Pengangguran Berdasarkan Pendidikan Terakhir", y=1.02, fontsize=18)
