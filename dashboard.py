@@ -114,7 +114,7 @@ st.markdown('')
 # grafik distribusi usia tahun 2014-2022
 slider_usia = st.selectbox(
     'Pilih tahun untuk melihat distribusi kelompok usia pengangguran per tahun',
-    [2014,2015],
+    [2014,2015,2016,2017,2018,2019,2020,2021,2022]
     )
 fig = plt.figure(figsize=(10, 5))
 sns.barplot(
