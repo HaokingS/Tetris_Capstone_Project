@@ -13,7 +13,7 @@ prakerja = pd.read_csv('cleaned_prakerja.csv', index_col =0)
 st.set_page_config(layout='wide')
 
 # sidebar distribusi
-st.sidebar.header('Distribusi Pengangguran')
+# st.sidebar.header('Distribusi Pengangguran')
 # slider = st.sidebar.slider('Pilih Tahun', min_value = 2014, max_value = 2022, value = 2014)
 
 # judul 
