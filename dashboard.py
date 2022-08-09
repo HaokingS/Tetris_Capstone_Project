@@ -191,7 +191,7 @@ st.caption('Sumber: Badan Pusat Statistik')
 st.markdown('''<div style="text-align: justify;">
 Sejak bulan April tahun 2020, pemerintah sudah melaksanakan program kartu prakerja secara digital, mulai dari pendaftaran,
 pelatihan, hingga insentif yang dapat digunakan sebagai modal usaha juga diberikan secara digital. Dampak yang dihasilkan sudah
-dapat terlihat pada tahun 2021 dan 2022 karena terbukti memberikan manfaat yang sangat positif berdasarkan data yang 
+dapat terlihat pada tahun 2021 dan 2022 karena <b>terbukti memberikan manfaat yang sangat positif</b> berdasarkan data yang 
 diperoleh dari hasil prakerja.go.id.
 </div>''', unsafe_allow_html=True)
 st.markdown('')
