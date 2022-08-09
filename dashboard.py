@@ -38,7 +38,7 @@ slider = st.sidebar.slider('Pilih Tahun', min_value = 2014, max_value = 2022, va
 
 # judul 
 st.markdown('''<h1 style='text-align: center; color: black;'>
-Pengaruh Program Kartu Prakerjaaaa Terhadap Angka Pengangguran di Indonesia
+Pengaruh Program Kartu Prakerja Terhadap Angka Pengangguran di Indonesia
 </h1>''', unsafe_allow_html=True)
 
 # penulis
