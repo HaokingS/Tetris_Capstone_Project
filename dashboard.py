@@ -10,7 +10,7 @@ usia = pd.read_csv('cleaned_usia.csv', index_col = 0)
 prakerja = pd.read_csv('cleaned_prakerja.csv', index_col =0)
 
 # page config
-st.set_page_config(layout='wide')
+# st.set_page_config(layout='wide')
 
 # sidebar distribusi
 # st.sidebar.header('Distribusi Pengangguran')
