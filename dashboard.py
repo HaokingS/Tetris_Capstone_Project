@@ -198,7 +198,7 @@ st.markdown('')
 
 # bar chart gelombang prakerja
 fig = plt.figure(figsize=(10, 5))
-sns.barplot(
+sns.lineplot(
     x = 'gelombang',
     y = 'penerima', 
     data = prakerja
