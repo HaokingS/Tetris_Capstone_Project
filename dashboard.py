@@ -209,6 +209,9 @@ with col3:
 # prakerja 3
 st.markdown('''<div style="text-align: justify;">
 Dari 11 juta penerima manfaat program Kartu Prakerja, diperoleh data survei dibawah ini.
+Sebanyak <b>25,6%</b> terjun menjadi wirausahawan, karena 
+telah mendapatkan bekal pengetahuan dari mengikuti pelatihan. <b>Sejumlah 34,6%</b> yang semula menganggur kini sudah mendapatkan 
+pekerjaan dengan menyertakan sertifikat pelatihan. Namun, <b>masih ada 39,85%</b> yang masih belum mendapatkan pekerjaan.
 </div>''', unsafe_allow_html=True)
 
 # pie chart
@@ -224,11 +227,8 @@ st.pyplot(fig1)
 st.caption('Sumber: prakerja.go.id')
 
 # Prakerja 4
-st.markdown('''<div style="text-align: justify;">
-Sebanyak <b>25,6%</b> terjun menjadi wirausahawan, karena 
-telah mendapatkan bekal pengetahuan dari mengikuti pelatihan. <b>Sejumlah 34,6%</b> yang semula menganggur kini sudah mendapatkan 
-pekerjaan dengan menyertakan sertifikat pelatihan. Namun, <b>masih ada 39,85%</b> yang masih belum mendapatkan pekerjaan.
-</div>''', unsafe_allow_html=True)
+# st.markdown('''<div style="text-align: justify;">
+# </div>''', unsafe_allow_html=True)
 
 # insight 
 st.header('Insight')
