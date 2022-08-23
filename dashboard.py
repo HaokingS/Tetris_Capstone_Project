@@ -196,7 +196,7 @@ diperoleh dari hasil prakerja.go.id.
 </div>''', unsafe_allow_html=True)
 st.markdown('')
 
-st.write("Penerima Kartu Prakerja")
+st.header("Penerima Kartu Prakerja")
 
 col1, col2, col3 = st.columns(3)
 with col1:
