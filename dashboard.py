@@ -214,7 +214,7 @@ col1, col2, col3 = st.columns(3)
 with col1:
     st.metric('Jumlah Gelombang', 20)
 with col2:
-    st.metric('Rata-rata Penerima Kartu Per Gelombang', 560666)
+    st.metric('Rata-rata Penerima', 560666)
 with col3:
     st.metric('Total Penerima Kartu Prakerja', 11774001)
 
