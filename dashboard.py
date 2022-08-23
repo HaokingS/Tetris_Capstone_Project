@@ -196,19 +196,7 @@ diperoleh dari hasil prakerja.go.id.
 </div>''', unsafe_allow_html=True)
 st.markdown('')
 
-# bar chart gelombang prakerja
-fig = plt.figure(figsize=(10, 5))
-sns.lineplot(
-    x = 'gelombang',
-    y = 'penerima', 
-    data = prakerja
-)
-plt.ticklabel_format(style='plain', axis='y')
-plt.title("Penerima Kartu Prakerja", y=1.02, fontsize=18)
-plt.xlabel('Gelombang', fontweight='bold')
-plt.ylabel('Jumlah Penerima', fontweight='bold')
-st.pyplot(fig)
-st.caption('Sumber: prakerja.go.id')
+st.write("Penerima Kartu Prakerja")
 
 col1, col2, col3 = st.columns(3)
 with col1:
@@ -217,7 +205,6 @@ with col2:
     st.metric('Rata-rata Penerima', 560666)
 with col3:
     st.metric('Total Penerima Kartu Prakerja', 11774001)
-
 
 # prakerja 3
 st.markdown('''<div style="text-align: justify;">
@@ -234,6 +221,7 @@ ax1.pie(sizes, explode=explode, labels=labels, radius=1, autopct='%1.1f%%',
         shadow=False, startangle=90)
 ax1.axis('equal')
 st.pyplot(fig1)
+st.caption('Sumber: prakerja.go.id')
 
 # Prakerja 4
 st.markdown('''<div style="text-align: justify;">
