@@ -212,9 +212,7 @@ st.caption('Sumber: prakerja.go.id')
 
 # prakerja 3
 st.markdown('''<div style="text-align: justify;">
-Dari 11 juta penerima manfaat program Kartu Prakerja,
-diperoleh data survei dibawah ini. Sebanyak 90% belum pernah mengikuti pelatihan apapun sebelum mendapatkan kartu prakerja. 
-Menggunakan insentif Kartu Prakerja untuk modal usaha sebesar 42,4%.
+Dari 11 juta penerima manfaat program Kartu Prakerja, diperoleh data survei dibawah ini.
 </div>''', unsafe_allow_html=True)
 
 # pie chart
