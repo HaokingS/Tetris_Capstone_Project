@@ -210,7 +210,7 @@ plt.ylabel('Jumlah Penerima', fontweight='bold')
 st.pyplot(fig)
 st.caption('Sumber: prakerja.go.id')
 
-st.metric('Jumlah Gelombang', 42, 2)
+st.metric('Jumlah Gelombang', 20)
 
 
 
