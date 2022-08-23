@@ -210,9 +210,13 @@ plt.ylabel('Jumlah Penerima', fontweight='bold')
 st.pyplot(fig)
 st.caption('Sumber: prakerja.go.id')
 
-st.metric('Jumlah Gelombang', 20)
-
-
+column1, column2, column3 = st.column(3)
+with column1:
+    st.metric('Jumlah Gelombang', 20)
+with column2:
+    st.metric('Rata-rata Penerima Kartu Per Gelombang', 560666)
+with column3:
+    st.metric('Total Penerima Kartu Prakerja', 11774001)
 
 
 # prakerja 3
