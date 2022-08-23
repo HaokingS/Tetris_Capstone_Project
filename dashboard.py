@@ -210,6 +210,11 @@ plt.ylabel('Jumlah Penerima', fontweight='bold')
 st.pyplot(fig)
 st.caption('Sumber: prakerja.go.id')
 
+st.metric('Jumlah Gelombang', 42, 2)
+
+
+
+
 # prakerja 3
 st.markdown('''<div style="text-align: justify;">
 Dari 11 juta penerima manfaat program Kartu Prakerja, diperoleh data survei dibawah ini.
