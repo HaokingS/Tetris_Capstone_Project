@@ -112,7 +112,7 @@ Usia yang dikategorikan mulai dari umur 15 tahun hingga 60 tahun dengan interval
 st.markdown('')
 
 # grafik distribusi usia tahun 2014-2022
-slider_usia = st.selectbox(
+slider_usia = st.slider(
     'Pilih tahun untuk melihat distribusi kelompok usia pengangguran per tahun',
     [2014,2015,2016,2017,2018,2019,2020,2021,2022]
     )
