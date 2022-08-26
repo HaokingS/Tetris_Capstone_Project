@@ -129,13 +129,7 @@ plt.ylabel('Usia', fontweight='bold')
 st.pyplot(fig)
 st.caption('Sumber: Badan Pusat Statistik')
 
-# new grafik usia 
-fig = plt.figure(figsize=(10, 5))
-sns.barplot(
-    x = 'kelompok_usia',
-    y = 'jumlah_pengangguran', 
-    data = usia[usia['tahun']]
-)
+# new grafik usia
 
 # distribusi usia 2
 st.markdown('''<div style="text-align: justify;">
