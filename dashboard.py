@@ -134,7 +134,7 @@ fig = plt.figure(figsize=(10, 5))
 sns.barplot(
     x = 'kelompok_usia',
     y = 'jumlah_pengangguran', 
-    data = 'tahun'
+    data = usia[usia['tahun']]
 )
 
 # distribusi usia 2
