@@ -130,6 +130,7 @@ st.pyplot(fig)
 st.caption('Sumber: Badan Pusat Statistik')
 
 # new grafik usia 
+fig = plt.figure(figsize=(10, 5))
 sns.barplot(
     x = 'kelompok_usia',
     y = 'jumlah_pengangguran', 
