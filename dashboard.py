@@ -129,6 +129,13 @@ plt.ylabel('Usia', fontweight='bold')
 st.pyplot(fig)
 st.caption('Sumber: Badan Pusat Statistik')
 
+# new grafik usia 
+sns.barplot(
+    x = 'jumlah_pengangguran',
+    y = 'kelompok_usia', 
+    data = 'tahun'
+)
+
 # distribusi usia 2
 st.markdown('''<div style="text-align: justify;">
 Sejak tahun 2014 hingga 2022 kategori usia yang mendominasi menjadi pengangguran adalah pada <b>rentang usia 20-24 tahun.</b> 
