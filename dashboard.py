@@ -131,9 +131,9 @@ st.caption('Sumber: Badan Pusat Statistik')
 
 # new grafik usia 
 sns.barplot(
-    x = 'jumlah_pengangguran',
-    y = 'kelompok_usia', 
-    data = usia['tahun']
+    x = 'kelompok_usia',
+    y = 'jumlah_pengangguran', 
+    data = 'tahun'
 )
 
 # distribusi usia 2
