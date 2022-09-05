@@ -132,14 +132,14 @@ st.caption('Sumber: Badan Pusat Statistik')
 # new grafik usia
 
 # distribusi usia 2
-st.markdown('''<div style="text-align: justify;">
-Sejak tahun 2014 hingga 2022 kategori usia yang mendominasi menjadi pengangguran adalah pada <b>rentang usia 20-24 tahun.</b> 
-Pada tahun 2014 hingga 2018 rentang usia 15-19 tahun menempati posisi kedua dan rentang 25-29 tahun pada posisi ketiga. 
-Namun, sejak tahun 2018 rentang usia 25-29 tahun mendominasi posisi kedua. Tenaga kerja yang pada awalnya pada usia muda 
-berpindah ke rentang usia yang lebih tua. Hal ini menunjukkan sejak tahun 2018 <b>tidak ada perubahan signifikan</b>     yang terjadi 
-terhadap pengangguran.
-</div>''', unsafe_allow_html=True)
-st.markdown('')
+# st.markdown('''<div style="text-align: justify;">
+# Sejak tahun 2014 hingga 2022 kategori usia yang mendominasi menjadi pengangguran adalah pada <b>rentang usia 20-24 tahun.</b> 
+# Pada tahun 2014 hingga 2018 rentang usia 15-19 tahun menempati posisi kedua dan rentang 25-29 tahun pada posisi ketiga. 
+# Namun, sejak tahun 2018 rentang usia 25-29 tahun mendominasi posisi kedua. Tenaga kerja yang pada awalnya pada usia muda 
+# berpindah ke rentang usia yang lebih tua. Hal ini menunjukkan sejak tahun 2018 <b>tidak ada perubahan signifikan</b>     yang terjadi 
+# terhadap pengangguran.
+# </div>''', unsafe_allow_html=True)
+# st.markdown('')
 
 # disribusi pendidikan 1
 st.subheader('Pendidikan')
@@ -165,11 +165,11 @@ st.pyplot(fig)
 st.caption('Sumber: Badan Pusat Statistik')
 
 # distribusi pendidikan 2 
-st.markdown('''<div style="text-align: justify;">
-Sejak tahun 2014-2022, <b>kategori pendidikan tertinggi SMU</b> merupakan kategori yang memiliki jumlah pengangguran paling banyak.
-Selain itu, pengangguran juga didominasi dari <b>kategori SD, SLTP, dan SMK.</b>
-</div>''', unsafe_allow_html=True)
-st.markdown('')
+# st.markdown('''<div style="text-align: justify;">
+# Sejak tahun 2014-2022, <b>kategori pendidikan tertinggi SMU</b> merupakan kategori yang memiliki jumlah pengangguran paling banyak.
+# Selain itu, pengangguran juga didominasi dari <b>kategori SD, SLTP, dan SMK.</b>
+# </div>''', unsafe_allow_html=True)
+# st.markdown('')
 
 # prakerja 1
 st.header('Prakerja')
@@ -236,7 +236,7 @@ st.caption('Sumber: prakerja.go.id')
 st.header('Insight')
 st.markdown('''
 - Populasi penduduk akan terus bertambah sehingga perlu dilakukan peningkatan kualitas dari masyarakat agar dapat bersaing ataupun memulai wirausaha sehingga dapat membuka lapangan pekerjaan
-- Kategori pengangguran yang dominan masih dalam usia muda (20-24 tahun) dan memiliki dasar pengetahuan dan potensi (SMU) sehingga pemerintah perlu memfokuskan program kartu prakerja ke golongan tersebut 
+- Pada tahun 2021, kategori pengangguran yang dominan masih dalam usia muda (20-24 tahun) dan memiliki dasar pengetahuan dan potensi (SMU) sehingga pemerintah perlu memfokuskan program kartu prakerja ke golongan tersebut 
 - Hal ini merupakan salah satu tindakan yang tepat dilakukan pemerintah dalam menangani pengangguran dengan menyediakan fasilitas bagi pengangguran yang terdampak
 - Prakerja belum dapat menurunkan angka pengangguran secara signifikan, hal ini dapat ditingkatkan dengan memperbesar kuota penerima kartu prakerja
 ''', unsafe_allow_html=True)
