@@ -106,10 +106,10 @@ st.markdown('')
 
 # distribusi usia
 st.subheader('Usia')
-st.markdown('''<div style="text-align: justify;">
-Usia yang dikategorikan mulai dari umur 15 tahun hingga 60 tahun dengan interval sebesar 4 tahun.
-</div>''', unsafe_allow_html=True)
-st.markdown('')
+# st.markdown('''<div style="text-align: justify;">
+# Usia yang dikategorikan mulai dari umur 15 tahun hingga 60 tahun dengan interval sebesar 4 tahun.
+# </div>''', unsafe_allow_html=True)
+# st.markdown('')
 
 # grafik distribusi usia tahun 2014-2022
 slider_usia = st.slider(
@@ -143,11 +143,11 @@ st.caption('Sumber: Badan Pusat Statistik')
 
 # disribusi pendidikan 1
 st.subheader('Pendidikan')
-st.markdown('''<div style="text-align: justify;">
-Jumlah pengangguran juga dapat dilihat dari kategori pendidikan yaitu kategori belum bersekolah, lulusan SD, SMP, SMU/SMK, akademi, 
-maupun universitas.
-</div>''', unsafe_allow_html=True)
-st.markdown('')
+# st.markdown('''<div style="text-align: justify;">
+# Jumlah pengangguran juga dapat dilihat dari kategori pendidikan yaitu kategori belum bersekolah, lulusan SD, SMP, SMU/SMK, akademi, 
+# maupun universitas.
+# </div>''', unsafe_allow_html=True)
+# st.markdown('')
 
 # grafik distribusi pendidikan tahun 2014-2022
 slider_pendidikan = st.slider('Pilih Tahun', min_value = 2014, max_value = 2022, value = 2014)
