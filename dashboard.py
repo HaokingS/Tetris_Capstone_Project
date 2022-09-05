@@ -235,8 +235,8 @@ st.caption('Sumber: prakerja.go.id')
 # insight 
 st.header('Insight')
 st.markdown('''
-- Populasi penduduk akan terus bertambah sehingga perlu dilakukan peningkatan kualitas dari masyarakat agar dapat bersaing dengan tenaga kerja luar ataupun memulai wirausaha sehingga dapat membuka lapangan pekerjaan
-- Kategori pengangguran yang dominan masih dalam usia muda dan memiliki dasar pengetahuan dan potensi sehingga program ini tepat karena dapat meningkatkan wawasan dan daya saing dari tenaga kerja
-- Hal ini merupakan salah satu tindakan yang tepat dilakukan pemerintah dalam menangani pengangguran dengan menyediakan fasilitas bagi tenaga kerja
+- Populasi penduduk akan terus bertambah sehingga perlu dilakukan peningkatan kualitas dari masyarakat agar dapat bersaing ataupun memulai wirausaha sehingga dapat membuka lapangan pekerjaan
+- Kategori pengangguran yang dominan masih dalam usia muda (20-24 tahun) dan memiliki dasar pengetahuan dan potensi (SMU) sehingga pemerintah perlu memfokuskan program kartu prakerja ke golongan tersebut 
+- Hal ini merupakan salah satu tindakan yang tepat dilakukan pemerintah dalam menangani pengangguran dengan menyediakan fasilitas bagi pengangguran yang terdampak
 - Prakerja belum dapat menurunkan angka pengangguran secara signifikan, hal ini dapat ditingkatkan dengan memperbesar kuota penerima kartu prakerja
 ''', unsafe_allow_html=True)
