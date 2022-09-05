@@ -113,7 +113,7 @@ st.subheader('Usia')
 
 # grafik distribusi usia tahun 2014-2022
 slider_usia = st.slider(
-    'Pilih tahun untuk melihat distribusi kelompok usia pengangguran per tahun', 
+    'Pilih tahun untuk melihat distribusi pengangguran berdasarkan kelompok usia', 
     min_value = 2014, max_value = 2022, value = 2014
     )
 fig = plt.figure(figsize=(10, 5))
@@ -150,7 +150,10 @@ st.subheader('Pendidikan')
 # st.markdown('')
 
 # grafik distribusi pendidikan tahun 2014-2022
-slider_pendidikan = st.slider('Pilih Tahun', min_value = 2014, max_value = 2022, value = 2014)
+slider_pendidikan = st.slider(
+    'Pilih tahun untuk melihat distribusi pengangguran berdasarkan pendidikan terakhir', 
+    min_value = 2014, max_value = 2022, value = 2014
+    )
 fig = plt.figure(figsize=(10, 5))
 sns.barplot(
     x = 'jumlah_pengangguran',
