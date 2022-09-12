@@ -40,12 +40,12 @@ st.write('')
 st.image('prakerja.png', caption = 'Ilustrasi Kartu Prakerja')
 
 # pendahuluan 2 
-st.markdown('''<div style="text-align: justify;">
-Salah satu tindakan yang dilakukan oleh pemerintah adalah program kartu prakerja. Dengan program ini, masyarakat diharapkan dapat
-meningkatkan wawasan dan pengetahuan serta mendapatkan keahlian sebagai tenaga kerja yang terampil agar dapat bersaing ataupun 
-berwirausaha dan membuka lapangan pekerjaan.
-</div>''', unsafe_allow_html=True)
-st.markdown('')
+# st.markdown('''<div style="text-align: justify;">
+# Salah satu tindakan yang dilakukan oleh pemerintah adalah program kartu prakerja. Dengan program ini, masyarakat diharapkan dapat
+# meningkatkan wawasan dan pengetahuan serta mendapatkan keahlian sebagai tenaga kerja yang terampil agar dapat bersaing ataupun 
+# berwirausaha dan membuka lapangan pekerjaan.
+# </div>''', unsafe_allow_html=True)
+# st.markdown('')
 
 # populasi indonesia 1
 st.header('Populasi Penduduk Indonesia')
