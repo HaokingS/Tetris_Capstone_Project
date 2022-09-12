@@ -240,6 +240,6 @@ st.header('Insight')
 st.markdown('''
 - Populasi penduduk akan terus bertambah sehingga perlu dilakukan peningkatan kualitas dari masyarakat agar dapat bersaing ataupun memulai wirausaha sehingga dapat membuka lapangan pekerjaan
 - Pada tahun 2021, kategori pengangguran yang dominan masih dalam usia muda (20-24 tahun) dan memiliki dasar pengetahuan dan potensi (SMU) sehingga pemerintah perlu memfokuskan program kartu prakerja ke golongan tersebut 
-- Hal ini merupakan salah satu tindakan yang tepat dilakukan pemerintah dalam menangani pengangguran dengan menyediakan fasilitas bagi pengangguran yang terdampak
+- Program ini merupakan salah satu tindakan yang tepat dilakukan pemerintah dalam menangani pengangguran dengan cara menyediakan fasilitas bagi pengangguran
 - Prakerja belum dapat menurunkan angka pengangguran secara signifikan, hal ini dapat ditingkatkan dengan memperbesar kuota penerima kartu prakerja
 ''', unsafe_allow_html=True)
