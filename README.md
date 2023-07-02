@@ -10,7 +10,9 @@ Dipublikasi pada 4 Agustus 2022
 By : Haoking Suryanatmaja
 </p>
 
-![image](https://github.com/HaokingS/Tetris_Capstone_Project/blob/main/prakerja.png)
+<p align='center'>
+<img src = "https://github.com/HaokingS/Tetris_Capstone_Project/blob/main/prakerja.png">
+</p>
 
 <p align='center'>
 Link to the app : https://dashboardprakerja.streamlit.app/
